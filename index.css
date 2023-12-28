@@ -1,13 +1,19 @@
 body {
     background-color: hsl(0, 0%, 70%);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 100vh;
     margin: 0;
+    gap: 10rem;
 }
 
-.grid-container {
+h1 {
+    font-size: 6rem;
+}
+
+/* .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 60px);
     grid-template-rows: repeat(10, 60px);
@@ -56,7 +62,7 @@ body {
 .obstacle {
     background-color: brown;
     pointer-events: none;
-}
+} */
 
 .reset-button {
     position: absolute;
