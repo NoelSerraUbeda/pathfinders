@@ -72,6 +72,7 @@ class Level extends HTMLElement {
                 border: black solid 3px;
                 border-radius: 2rem;
                 width:10rem;
+                height:8rem;
                 display:flex;
                 align-items:center;
                 justify-content:center;
@@ -192,11 +193,15 @@ class Level extends HTMLElement {
         const clickedCol = parseInt(clickedSquare.dataset.col, 10);
 
         if (this.getNeighbors(clickedSquare).some(neighbor => neighbor.classList.contains('end'))) {
-            this.showCustomMessage('¡conexión establecida!', 5);
+            this.showCustomMessage('¡Conexión establecida!', 5);
+            document.dispatchEvent(new CustomEvent('buttonsActivated', {}));
             this.connectionEstablished = true;
-            this.shadow.querySelector('#attempts').style.display = 'none';
+            this.attempts = 20;
+            this.updateAttemptsCount();
         }
     }
+
+
 
     updateAttemptsCount() {
         this.shadow.querySelector('#attempts').textContent = this.attempts;
