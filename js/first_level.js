@@ -14,6 +14,7 @@ class Level extends HTMLElement {
     render() {
         this.shadow.innerHTML =
         /*html*/`
+
         <style>
             .grid-container {
                 display: grid;
@@ -60,19 +61,39 @@ class Level extends HTMLElement {
 
             #attempts {
                 position: absolute;
-                top: 10px;
-                left: 10px;
-                font-size: 3.5rem;
+                top: 50px;
+                left: 50px;
+                font-size: 10rem;
             }
 
             .attempts_counter {
                 background-color: lightgrey;
-                padding: 1rem;
+                padding: 2rem;
                 border: black solid 3px;
-                border-radius: 10px;
-                font-size: 40px;
+                border-radius: 2rem;
+                width:10rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
             }
+
+            .custom-message {
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #333;
+                color: #fff;
+                padding: 2rem;
+                border-radius: 1.5rem;
+                font-size: 5rem;
+                z-index: 1000;
+                display:none;
+            }
+
+
         </style>
+        <div class="custom-message"></div>
         <div class="grid-container" id="gridContainer"></div>
         <div class="attempts_counter" id="attempts">${this.attempts}</div>
         `;
@@ -129,21 +150,35 @@ class Level extends HTMLElement {
         const neighbors = [];
 
         [this.shadow.querySelector(`[data-row="${clickedRow - 1}"][data-col="${clickedCol}"]`),
-         this.shadow.querySelector(`[data-row="${clickedRow + 1}"][data-col="${clickedCol}"]`),
-         this.shadow.querySelector(`[data-row="${clickedRow}"][data-col="${clickedCol - 1}"]`),
-         this.shadow.querySelector(`[data-row="${clickedRow}"][data-col="${clickedCol + 1}"]`)]
+        this.shadow.querySelector(`[data-row="${clickedRow + 1}"][data-col="${clickedCol}"]`),
+        this.shadow.querySelector(`[data-row="${clickedRow}"][data-col="${clickedCol - 1}"]`),
+        this.shadow.querySelector(`[data-row="${clickedRow}"][data-col="${clickedCol + 1}"]`)]
             .filter(Boolean)
             .forEach(neighbor => neighbors.push(neighbor));
 
         return neighbors;
     }
 
+    showCustomMessage(message, durationInSeconds) {
+        const messageContainer = this.shadow.querySelector('.custom-message');
+        messageContainer.textContent = message;
+        messageContainer.style.display = 'block';
+    
+        setTimeout(() => {
+            messageContainer.style.display = 'none';
+        }, durationInSeconds * 1000);
+    
+        this.connectionEstablished = true;
+        this.shadow.querySelector('#attempts').style.display = 'none';
+    }
+    
+
     checkConnection(clickedSquare) {
         const clickedRow = parseInt(clickedSquare.dataset.row, 10);
         const clickedCol = parseInt(clickedSquare.dataset.col, 10);
 
         if (this.getNeighbors(clickedSquare).some(neighbor => neighbor.classList.contains('end'))) {
-            alert('¡Conexión establecida!');
+            this.showCustomMessage('¡conexión establecida!', 5);
             this.connectionEstablished = true;
             this.shadow.querySelector('#attempts').style.display = 'none';
         }
@@ -155,7 +190,7 @@ class Level extends HTMLElement {
 
     checkAttempts() {
         if (this.attempts === 0) {
-            alert('Sin intentos disponibles');
+            this.showCustomMessage('Sin intentos disponibles', 3);
         }
     }
 
@@ -173,17 +208,17 @@ customElements.define('level-component', Level);
 
 // Coordenadas obstáculos
 const levelComponent = document.querySelector('level-component');
-levelComponent.addObstacle(9, 5); 
-levelComponent.addObstacle(9, 4); 
-levelComponent.addObstacle(8, 5); 
-levelComponent.addObstacle(8, 4); 
-levelComponent.addObstacle(7, 5); 
-levelComponent.addObstacle(7, 4); 
-levelComponent.addObstacle(6, 5); 
-levelComponent.addObstacle(6, 4); 
-levelComponent.addObstacle(2, 5); 
-levelComponent.addObstacle(2, 4); 
-levelComponent.addObstacle(1, 5); 
-levelComponent.addObstacle(1, 4); 
-levelComponent.addObstacle(0, 5); 
+levelComponent.addObstacle(9, 5);
+levelComponent.addObstacle(9, 4);
+levelComponent.addObstacle(8, 5);
+levelComponent.addObstacle(8, 4);
+levelComponent.addObstacle(7, 5);
+levelComponent.addObstacle(7, 4);
+levelComponent.addObstacle(6, 5);
+levelComponent.addObstacle(6, 4);
+levelComponent.addObstacle(2, 5);
+levelComponent.addObstacle(2, 4);
+levelComponent.addObstacle(1, 5);
+levelComponent.addObstacle(1, 4);
+levelComponent.addObstacle(0, 5);
 levelComponent.addObstacle(0, 4); 

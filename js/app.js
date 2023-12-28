@@ -1,2 +1,2 @@
 
-import './level_component.js';
+import './first_level.js';

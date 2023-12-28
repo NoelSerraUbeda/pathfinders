@@ -3,66 +3,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100vh;
     margin: 0;
-    gap: 10rem;
+    gap: 2rem;
+    font-family: monospace;
 }
 
 h1 {
     font-size: 6rem;
 }
-
-/* .grid-container {
-    display: grid;
-    grid-template-columns: repeat(10, 60px);
-    grid-template-rows: repeat(10, 60px);
-    gap: 2px;
-    border: rgb(22, 1, 1) 20px solid;
-    border-radius: 1rem;
-    padding: 0.2rem;
-}
-
-.square {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.start {
-    grid-row: 10;
-    grid-column: 1;
-    background-color: black;
-    background-image: url(icons/start.svg);
-    border-radius: 0.5rem;
-}
-
-.end {
-    grid-row: 1;
-    grid-column: 10;
-    background-color: black;
-    background-image: url(icons/end.svg);
-    border-radius: 0.5rem;
-
-}
-
-.path{
-    background-color: green;
-}
-
-#attempts {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 3.5rem;
-}
-
-.obstacle {
-    background-color: brown;
-    pointer-events: none;
-} */
 
 .reset-button {
     position: absolute;
@@ -74,4 +24,20 @@ h1 {
     border: none;
     background-color:hsl(0, 0%, 70%);
     cursor: pointer;
+}
+
+.next-button{
+    width: 300px;
+    font-size: 40px;
+    border: solid black 5px;
+    padding-top:2rem;
+    padding-bottom:2rem;
+    background-color:hsl(0, 0%, 70%);
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.next-button:hover{
+    background-color:hsl(0, 0%, 0%);
+    color: white;
 }
