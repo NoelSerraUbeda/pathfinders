@@ -17,11 +17,12 @@ class Level extends HTMLElement {
 
         <style>
             .grid-container {
+                background-color:black;
                 display: grid;
                 grid-template-columns: repeat(10, 60px);
                 grid-template-rows: repeat(10, 60px);
-                gap: 2px;
-                border: rgb(22, 1, 1) 20px solid;
+                gap: 3px;
+                border: black 20px solid;
                 border-radius: 1rem;
                 padding: 0.2rem;
             }
@@ -30,7 +31,6 @@ class Level extends HTMLElement {
                 width: 100%;
                 height: 100%;
                 background-color: #fff;
-                border: 1px solid #ccc;
                 box-sizing: border-box;
             }
 
@@ -89,8 +89,22 @@ class Level extends HTMLElement {
                 font-size: 5rem;
                 z-index: 1000;
                 display:none;
+                text-align:center;
             }
+            @media only screen and (min-width: 600px) {
+                
+                #attempts {
+                    font-size: 5rem;
+                }
 
+                .attempts_counter {
+                    padding: 0.5rem;
+                }
+
+                .custom-message {
+                    font-size: 2.5rem;
+                }
+            }
 
         </style>
         <div class="custom-message"></div>
