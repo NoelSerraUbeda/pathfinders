@@ -67,8 +67,8 @@ class Level extends HTMLElement {
 
                 #attempts {
                     position: absolute;
-                    top: 50px;
-                    left: 50px;
+                    top: 1rem;
+                    left: 8rem;
                     font-size: 10rem;
                 }
 
@@ -86,7 +86,7 @@ class Level extends HTMLElement {
 
                 .custom-message {
                     position: absolute;
-                    top: 10%;
+                    top: 40%;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     background-color: #333;
@@ -125,7 +125,6 @@ class Level extends HTMLElement {
             const square = event.target;
             if (this.canMakeMove(square)) {
                 if (square.classList.contains('yellow-block')) {
-                    // Si es un bloque amarillo, cambiar a verde y sumar +5 a los intentos
                     square.classList.remove('yellow-block');
                     square.classList.add('path');
                     this.attempts += 5;
@@ -247,6 +246,7 @@ class Level extends HTMLElement {
         if (this.getNeighbors(clickedSquare).some(neighbor => neighbor.classList.contains('end'))) {
             this.showCustomMessage('¡Conexión establecida!', 5);
             document.dispatchEvent(new CustomEvent('buttonsActivated', {}));
+
             this.connectionEstablished = true;
             this.attempts = 20;
             this.updateAttemptsCount();

@@ -1,6 +1,7 @@
 body {
-    background-image: url(icons/background.svg);
+    background-image: url(images/background.svg);
     background-size: cover;
+    background-position-y: -1rem;
     background-color: rgb(8, 112, 168);
     display: flex;
     flex-direction: column;
@@ -16,65 +17,3 @@ h1 {
     font-size: 6rem;
 }
 
-.reset-button {
-    position: absolute;
-    top: 10px;
-    right: 40px;
-    border: none;
-    background: none;
-    height: 150px;
-    width: 150px;
-    cursor: pointer;
-    transition: transform 1.6s ease;
-}
-
-.reset-button svg{
-    height: 130px;
-}
-
-.reset-button:hover {
-    transform: rotate(360deg)scale(1.1);
-}
-
-.button {
-    width: 300px;
-    font-size: 40px;
-    border: solid black 5px;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    background-color: hsl(0, 0%, 70%);
-    border-radius: 1.5rem;
-    cursor: pointer;
-    visibility: hidden;
-    transition: transform 0.3s ease-in-out;
-}
-
-.activated {
-    animation: shake 0.5s ease-in-out; 
-}
-
-.level-traveling-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 45rem;
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25%, 75% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-}
-
-.button:hover {
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.2);
-    background-color: hsl(0, 0%, 0%);
-    color: white;
-}
