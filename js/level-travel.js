@@ -7,10 +7,9 @@ class Travel extends HTMLElement {
     }
 
     handleActivated = () => {
-        const buttons = this.shadow.querySelectorAll(".button");
+        const buttons = this.shadow.querySelectorAll(".level-traveling-buttons");
     
         buttons.forEach(function (button) {
-            button.style.visibility = 'visible';
             button.classList.add('activated');
         });
     }
@@ -23,6 +22,16 @@ class Travel extends HTMLElement {
     render() {
         this.shadow.innerHTML = /*html*/`
             <style>
+                .level-traveling-buttons {
+                    display: none;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 45rem;
+                    height:0rem;
+                    margin-top:4rem;
+                    visibility: hidden;
+                }
+
                 .button {
                     width: 300px;
                     font-size: 40px;
@@ -32,21 +41,15 @@ class Travel extends HTMLElement {
                     background-color: hsl(0, 0%, 70%);
                     border-radius: 1.5rem;
                     cursor: pointer;
-                    visibility: hidden;
                     transition: transform 0.3s ease-in-out;
                 }
 
                 .activated {
                     animation: shake 0.5s ease-in-out; 
+                    visibility: visible;
+                    display:flex;
                 }
                 
-                .level-traveling-buttons {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    width: 45rem;
-                    height:1rem;
-                }
 
                 @keyframes shake {
                     0%, 100% {

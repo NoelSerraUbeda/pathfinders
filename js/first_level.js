@@ -23,6 +23,7 @@ class Level extends HTMLElement {
                     border: black 20px solid;
                     border-radius: 1rem;
                     padding: 0.2rem;
+                    margin-top:-8.5rem;
                 }
 
                 .square {
