@@ -17,7 +17,7 @@ body {
 .container {
     background-color: bisque;
     width: 88%;
-    height: 80%;
+    height: auto;
     padding: 1rem;
     border-radius: 1rem;
     border: 10px solid black;
