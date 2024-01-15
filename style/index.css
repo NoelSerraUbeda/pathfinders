@@ -24,4 +24,39 @@ body a:hover{
     transform:scale(1.1)
 }
 
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.brand img {
+    width: 80rem;
+}
+
+.text {
+    width: 80rem;
+    position: absolute;
+    animation: swing 10s ease-in-out infinite;
+}
+
+@keyframes swing {
+    20% {
+      transform: rotate(2deg);
+    }
+    40% {
+      transform: rotate(-2deg);
+    }
+    60% {
+      transform: rotate(2deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+  }
