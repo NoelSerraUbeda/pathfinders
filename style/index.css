@@ -12,3 +12,77 @@ body {
     gap: 2rem;
     font-family: monospace;
 }
+
+
+.container {
+    background-color: bisque;
+    width: 88%;
+    height: 80%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container_levels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.container_card {
+    transition: color 0.1s ease, fill 0.3s ease, transform 0.3s ease;
+    background-color: green;
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: solid 3px black;
+}
+
+.container_card:hover{
+    transform: scale(1.15);
+}
+
+.container_card a{
+    border-radius: 1rem;
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+}
+
+.container_card a:hover{
+    background-color: white;
+    color: black;
+}
+
+.container_arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 20px;
+}
+
+.container_arrows svg,
+.container_arrows h2 {
+    text-align: center;
+    width: 3rem;
+    transition: color 0.1s ease, fill 0.3s ease, transform 0.3s ease;
+}
+
+.container_arrows svg:hover,
+.container_arrows h2:hover {
+    cursor: pointer;
+    color: blue;
+    fill: blue;
+    transform: scale(1.2);
+}
