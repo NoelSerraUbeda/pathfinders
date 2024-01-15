@@ -16,6 +16,7 @@ class Brand extends HTMLElement {
                     flex-direction:column;
                     gap:3rem;
                     align-items:center;
+                    margin:1rem;
                 }
 
                 .brand {
@@ -25,11 +26,11 @@ class Brand extends HTMLElement {
                 }
 
                 .brand img {
-                    width: 80rem;
+                    width: 75rem;
                 }
 
                 .text {
-                    width: 80rem;
+                    width: 75rem;
                     position: absolute;
                     animation: swing 10s ease-in-out infinite;
                 }
@@ -44,7 +45,7 @@ class Brand extends HTMLElement {
                 .option a{
                     text-decoration:none;
                     color:white;
-                    font-size:22px;
+                    font-size:20px;
                 }
 
                 .option h1{

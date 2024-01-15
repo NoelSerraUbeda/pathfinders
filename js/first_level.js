@@ -14,6 +14,12 @@ class Level extends HTMLElement {
     render() {
         this.shadow.innerHTML = /*html*/`
             <style>
+                .center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: end;
+                }
                 .grid-container {
                     background-color: black;
                     display: grid;
@@ -23,7 +29,7 @@ class Level extends HTMLElement {
                     border: black 20px solid;
                     border-radius: 1rem;
                     padding: 0.2rem;
-                    margin-top:-8.5rem;
+                    margin-top: 0.5rem;
                 }
 
                 .square {
@@ -114,9 +120,11 @@ class Level extends HTMLElement {
                     }
                 }
             </style>
-            <div class="custom-message"></div>
-            <div class="grid-container" id="gridContainer"></div>
-            <div class="attempts_counter" id="attempts">${this.attempts}</div>
+            <div class="center">
+                <div class="custom-message"></div>
+                <div class="grid-container" id="gridContainer"></div>
+                <div class="attempts_counter" id="attempts">${this.attempts}</div>
+            </div>
         `;
         this.initializeGrid();
     }

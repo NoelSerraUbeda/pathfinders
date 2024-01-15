@@ -22,6 +22,14 @@ class Travel extends HTMLElement {
     render() {
         this.shadow.innerHTML = /*html*/`
             <style>
+
+                .center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                }
                 .level-traveling-buttons {
                     display: none;
                     justify-content: space-around;
@@ -71,10 +79,11 @@ class Travel extends HTMLElement {
                 }
 
             </style>
-
-            <div class="level-traveling-buttons">
-                <button id="previousButton" class="button">Previous level</button>
-                <button id="nextButton" class="button">Next level</button>
+            <div class="center">
+                <div class="level-traveling-buttons">
+                    <button id="previousButton" class="button">Previous level</button>
+                    <button id="nextButton" class="button">Next level</button>
+                </div>
             </div>
         `;
         this.initializeGrid();

@@ -3,16 +3,23 @@ body {
     background-size: cover;
     background-position-y: -1rem;
     background-color: rgb(8, 112, 168);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     margin: 0;
     gap: 2rem;
     font-family: monospace;
 }
 
+.center {
+    background-image: url(../images/background.svg);
+    background-position-y: -1rem;
+    background-color: rgb(8, 112, 168);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: monospace;
+}
 
 .container {
     background-color: bisque;
@@ -24,20 +31,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 5rem;
+    margin-top: 2rem;
 }
 
 .container_levels {
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .container_card {
     transition: color 0.1s ease, fill 0.3s ease, transform 0.3s ease;
     background-color: green;
-    width: 8rem;
-    height: 8rem;
-    margin: 1rem;
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem;
     border-radius: 1rem;
     border: solid 3px black;
 }
@@ -55,7 +64,7 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 36px;
     color: white;
 }
 
