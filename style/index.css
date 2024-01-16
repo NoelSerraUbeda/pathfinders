@@ -48,8 +48,8 @@ body {
 .container_card {
     transition: color 0.1s ease, fill 0.3s ease, transform 0.3s ease;
     background-color: green;
-    width: 6rem;
-    height: 6rem;
+    width: 9rem;
+    height: 9rem;
     margin: 0.5rem;
     border-radius: 1rem;
     border: solid 3px black;
