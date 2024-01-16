@@ -7,6 +7,7 @@ body {
     margin: 0;
     gap: 2rem;
     font-family: monospace;
+    overflow: hidden;
 }
 
 .center {
@@ -16,15 +17,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     margin: 0;
     font-family: monospace;
+    height: 100%;
 }
 
 .container {
     background-color: bisque;
-    width: 88%;
-    height: auto;
+    width: 85%;
+    height: 80%;
     padding: 1rem;
     border-radius: 1rem;
     border: 10px solid black;
@@ -37,6 +39,8 @@ body {
 
 .container_levels {
     display: flex;
+    justify-content: center;
+    align-items: start;
     flex-wrap: wrap;
     gap: 2rem;
 }
@@ -44,8 +48,8 @@ body {
 .container_card {
     transition: color 0.1s ease, fill 0.3s ease, transform 0.3s ease;
     background-color: green;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     margin: 0.5rem;
     border-radius: 1rem;
     border: solid 3px black;
