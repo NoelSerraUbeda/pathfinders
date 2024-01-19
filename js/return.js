@@ -14,13 +14,13 @@ class Return extends HTMLElement {
             <style>
 
                 button {
-                    width:4rem;
+                    width:6rem;
                     border:none;
                     background:none;
                     position:absolute;
                     z-index:999;
-                    top:0;
-                    left:0;
+                    top:0.5rem;
+                    left:0.5rem;
                 }
 
                 button svg{
