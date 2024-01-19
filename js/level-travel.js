@@ -44,8 +44,8 @@ class Travel extends HTMLElement {
                     width: 300px;
                     font-size: 40px;
                     border: solid black 5px;
-                    padding-top: 2rem;
-                    padding-bottom: 2rem;
+                    padding-top: 1.3rem;
+                    padding-bottom: 1.3rem;
                     background-color: hsl(0, 0%, 70%);
                     border-radius: 1.5rem;
                     cursor: pointer;
