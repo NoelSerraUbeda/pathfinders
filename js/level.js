@@ -1,5 +1,3 @@
-import { initializeGrid } from './levels/level01.js';
-
 class Level extends HTMLElement {
     constructor() {
         super();
@@ -14,6 +12,12 @@ class Level extends HTMLElement {
     }
 
     render() {
+        // Obtén el valor del atributo data-level
+        const levelName = this.getAttribute('data-level') || 'level01';
+  
+        // Construye la ruta del archivo de nivel dinámicamente
+        const levelFilePath = `./levels/${levelName}.js`;
+
         this.shadow.innerHTML = /*html*/`
             <style>
                 .center {
@@ -128,7 +132,12 @@ class Level extends HTMLElement {
                 <div class="attempts_counter" id="attempts">${this.attempts}</div>
             </div>
         `;
-        initializeGrid.call(this);
+        
+        // Importa el módulo dinámicamente usando la ruta construida
+        import(levelFilePath).then(module => {
+            // Llama a initializeGrid del módulo importado
+            module.initializeGrid.call(this);
+        });
     }
 
     setupListeners() {

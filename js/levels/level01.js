@@ -17,7 +17,7 @@ function initializeGrid() {
   startSquare.classList.add('start');
   endSquare.classList.add('end');
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 0; i++) {
       const randomRow = Math.floor(Math.random() * 10);
       const randomCol = Math.floor(Math.random() * 10);
       const obstacleSquare = gridContainer.querySelector(`[data-row="${randomRow}"][data-col="${randomCol}"]`);
@@ -31,6 +31,7 @@ function initializeGrid() {
       }
   }
 }
+
 
 // Export the function for use in other files
 export { initializeGrid };

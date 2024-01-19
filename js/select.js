@@ -6,7 +6,28 @@ class Select extends HTMLElement {
 
   connectedCallback() {
       this.render();
+      this.setupListeners();
   }
+
+  setupListeners() {
+        const containerCards = this.shadow.querySelectorAll('.container_card');
+
+        // Agrega un evento click a cada tarjeta
+        containerCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Obtiene el valor del atributo data-level de la tarjeta clicada
+                const dataLevel = card.querySelector('a').getAttribute('data-level');
+
+                // Crea un evento personalizado y lo dispara
+                const customEvent = new CustomEvent('cardClicked', {
+                    detail: {
+                        dataLevel: dataLevel
+                    }
+                });
+                this.dispatchEvent(customEvent);
+            });
+        });
+    }
 
   render() {
       this.shadow.innerHTML = /*html*/`
@@ -107,12 +128,12 @@ class Select extends HTMLElement {
           <div class="container">
               <div class="container_levels">
                   <div class="container_card">
-                      <a href="level.html?level=01">
+                      <a href="level.html" data-level="level01">
                           <h2>01</h2>
                       </a>
                   </div>
                   <div class="container_card">
-                      <a href="level.html">
+                      <a href="level.html" data-level="level02">
                           <h2>02</h2>
                       </a>
                   </div>
